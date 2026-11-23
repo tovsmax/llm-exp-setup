@@ -5,6 +5,8 @@
 # Розгортання на пристрої (Docker Compose)
 
 ```cmd
+git clone https://github.com/tovsmax/llm-exp-setup.git
+cd llm-exp-setup
 docker compose up -d
 ```
 
