@@ -1,0 +1,62 @@
+model:
+  default: "Qwen3.5-9B-UD-Q4_K_XL"
+  provider: custom
+  # Must match the section name in your models.ini:
+  base_url: "http://llama-server:8080/v1"
+  api_key: "not-needed"
+
+plugins:
+  enabled:
+    - web-local
+
+# Hermes Desktop browser workspace
+webapp:
+  enabled: true
+  host: "0.0.0.0"
+  port: 9120
+
+# Enable the built-in web dashboard
+dashboard:
+  enabled: true
+  host: "0.0.0.0"
+  port: 9119
+
+
+web:
+  search_backend: "searxng"
+  extract_backend: "local"
+
+
+
+# # Speech-to-Text (STT) Engine
+# stt:
+#   provider: "faster-whisper" # Runs locally on CPU/GPU without API keys
+#   model: "base"              # "tiny" (fastest), "base" (recommended), or "small" (higher accuracy)
+#   language: "en"
+#
+# # Text-to-Speech (TTS) Engine
+# tts:
+#   provider: "edge"           # High-quality, free, no API key needed
+#   voice: "en-US-GuyNeural"   # e.g., "en-US-JennyNeural", "en-GB-RyanNeural"
+#
+# # Wake Word Detection (openWakeWord)
+# wake_word:
+#   enabled: true
+#   provider: "openwakeword"   # Free, on-device engine
+#   phrase: "hey hermes"       # Bundled openWakeWord model
+#   capture: "auto"            # "auto" uses browser mic when connected to Web UI
+#   sensitivity: 0.5           # Sensitivity between 0.0 and 1.0 (default: 0.5)
+
+# (Optional) Messaging platform credentials can be added here
+# platforms:
+#   telegram:
+#     enabled: true
+#     bot_token: "YOUR_TELEGRAM_BOT_TOKEN"
+_config_version: 53
+telemetry:
+  shared_metrics:
+    enabled: false
+    send: false
+    offer_version: 2
+approvals:
+  destructive_slash_confirm: false

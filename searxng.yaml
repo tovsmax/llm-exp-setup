@@ -1,0 +1,15 @@
+use_default_settings: true
+
+server:
+  # Change this to any random secret string
+  secret_key: "hermes_super_secret_searxng_key"
+  limiter: false # Disable rate limiter for local agent queries
+  bind_address: "0.0.0.0"
+
+search:
+  safe_search: 0
+  autocomplete: ""
+  # CRITICAL: Hermes requires json output format
+  formats:
+    - html
+    - json

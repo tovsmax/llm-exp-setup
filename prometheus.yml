@@ -1,0 +1,17 @@
+global:
+  scrape_interval: 5s
+  evaluation_interval: 5s
+
+scrape_configs:
+  - job_name: 'glances'
+    scrape_interval: 5s
+    static_configs:
+      - targets: ['glances:9091']
+
+
+  - job_name: "llama_server"
+    metrics_path: /metrics
+    params:
+      model: ["Qwen3.5-9B-UD-Q4_K_XL"]
+    static_configs:
+      - targets: ["llama-server:8080"]
